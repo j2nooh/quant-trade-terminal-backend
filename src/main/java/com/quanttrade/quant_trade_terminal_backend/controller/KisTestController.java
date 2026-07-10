@@ -1,6 +1,7 @@
 package com.quanttrade.quant_trade_terminal_backend.controller;
 
 import com.quanttrade.quant_trade_terminal_backend.client.KisPriceClient;
+import com.quanttrade.quant_trade_terminal_backend.dto.KisPriceResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,7 +15,7 @@ public class KisTestController {
     private final KisPriceClient kisPriceClient;
 
     @GetMapping("/test/price/{stockCode}")
-    public String getPrice(@PathVariable String stockCode) {
+    public KisPriceResponse getPrice(@PathVariable String stockCode) {
         return kisPriceClient.getCurrentPrice(stockCode);
     }
 }
