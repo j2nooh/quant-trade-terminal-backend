@@ -3,7 +3,10 @@ spring:
     include: secret
   application:
     name: quant-trade-terminal-backend
+  jackson:
+    property-naming-strategy: SNAKE_CASE
 
 kis:
   token-path: /oauth2/tokenP
   price-path: /uapi/domestic-stock/v1/quotations/inquire-price
+
